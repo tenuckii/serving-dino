@@ -1,0 +1,12 @@
+{
+  "name": "@tenucki/routing-dino",
+  "version": "0.1.0",
+  "license": "MIT",
+  "exports": "./route.ts",
+  "tasks": {
+    "dev": "deno run --watch --allow-net main.ts"
+  },
+  "imports": {
+    "@std/assert": "jsr:@std/assert@1"
+  }
+}
