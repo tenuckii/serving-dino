@@ -1,12 +1,10 @@
 import { assert, assertEquals, assertFalse } from "@std/assert";
-import Route, { Methods} from "../mod.ts";
+import Route, { Methods} from "../mod.ts"
 
 const route: Route = Route.route();
 
-
-
-
 const server = Deno.serve(route.handler.bind(route));
+
 Deno.test(async function noRoute() {
     const response = await fetch("http://localhost:8000/noRoute");
     assertEquals(response.status, 404, "This test if the route is in the hashmap");
