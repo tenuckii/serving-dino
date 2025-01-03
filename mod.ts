@@ -49,7 +49,7 @@ export default class Route {
      * @param method method used by the request.
      * @param fn the function needed for the request.
      */
-    public path(strPath: string, method: Methods, fn: (...args: any) => Response) {
+    public path(strPath: string, method: Methods, fn: (option: Options) => Response) {
         this.dict.set(strPath, { method, fn })
     }
 
@@ -93,5 +93,5 @@ export interface Options{
  */
 interface endpoint {
     method: Methods,
-    fn: (...args: any) => Response
+    fn: (option: Options) => Response
 }

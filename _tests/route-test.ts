@@ -3,7 +3,7 @@ import Route, { Methods} from "../mod.ts"
 
 const route: Route = Route.route();
 
-const server = Deno.serve(route.handler.bind(route));
+Deno.serve(route.handler.bind(route));
 
 Deno.test(async function noRoute() {
     const response = await fetch("http://localhost:8000/noRoute");
