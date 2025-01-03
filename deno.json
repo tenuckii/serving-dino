@@ -6,7 +6,8 @@
   "publish": {
     "exclude": [
       "_tests/",
-      ".gitignore"
+      ".gitignore",
+      "./.github"
     ]
   },
   "imports": {
