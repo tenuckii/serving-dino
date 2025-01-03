@@ -5,12 +5,15 @@
   "exports": "./mod.ts",
   "publish": {
     "exclude": [
-      "_tests/",
+      "tests/",
       ".gitignore",
       "./.github"
     ]
   },
   "imports": {
     "@std/assert": "jsr:@std/assert@1"
+  },
+  "test": {
+    "include": ["tests/route-test.ts"]
   }
 }
