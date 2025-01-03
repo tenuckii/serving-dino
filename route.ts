@@ -95,3 +95,21 @@ interface endpoint {
     method: Methods,
     fn: (...args: any) => Response
 }
+
+
+  /**
+   * @module
+   *
+   * This module contains functions to search the database.
+   *
++  * @example
++  * ```Deno
++  * import Route, { Methods} from "jsr:@tenucki/routing-dino";
++  *
++  * const server = Deno.serve(route.handler.bind(route));
++  *
++  * route.path("/path", Methods.POST, () => {
++  *    return new Response("this path use a Post as a method");
++  * })
++  * ```
+   */
