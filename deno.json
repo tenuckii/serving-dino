@@ -1,9 +1,14 @@
 {
   "name": "@tenucki/routing-dino",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "license": "MIT",
   "exports": "./mod.ts",
   "publish": {
+    "include": [
+      "./*.ts",
+      "LICENSE",
+      "README.md"
+    ],
     "exclude": [
       "tests/",
       ".gitignore",
