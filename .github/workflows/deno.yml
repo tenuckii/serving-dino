@@ -13,9 +13,10 @@ on:
     branches: ["master"]
   pull_request:
     branches: ["master"]
-
+    
 permissions:
-  contents: read
+      contents: read
+      id-token: write
 
 jobs:
   test:
