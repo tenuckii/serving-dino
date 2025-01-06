@@ -7,7 +7,8 @@
     "include": [
       "./*.ts",
       "LICENSE",
-      "README.md"
+      "README.md",
+      "./src/*"
     ],
     "exclude": [
       "tests/",
