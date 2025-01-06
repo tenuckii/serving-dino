@@ -1,5 +1,6 @@
 import { assert, assertEquals, assertFalse } from "@std/assert";
-import {type Methods, Route } from "../mod.ts";
+import { Methods } from "../src/Methods.ts";
+import Route from "../src/Route.ts";
 
 const route: Route = Route.route();
 
