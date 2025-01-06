@@ -20,6 +20,9 @@
     "@std/assert": "jsr:@std/assert@1"
   },
   "test": {
-    "include": ["tests/route-test.ts"]
+    "include": ["./tests/*"]
+  },
+  "tasks": {
+    "test": "deno test --allow-net"
   }
 }
