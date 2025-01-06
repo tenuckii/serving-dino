@@ -1,5 +1,5 @@
 export default class Responses {
-    static async html(htmlPath: string) {
+    static async html(htmlPath: string): Promise<Response>{
         return new Response(await Deno.readTextFile(htmlPath), {
             headers: {
                 "Content-Type": "text/html; charset=UTF-8",
@@ -10,15 +10,15 @@ export default class Responses {
         });
     }
 
-    static ok() {
+    static ok():Response {
         return new Response("", { status: 200 })
     }
 
-    static forbidden() {
+    static forbidden(): Response {
         return new Response("", { status: 403 })
     }
 
-    static notFound() {
+    static notFound(): Response {
         return new Response("", { status: 404 })
     }
 

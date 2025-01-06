@@ -1,5 +1,5 @@
 import { Methods } from "./Methods.ts";
-import {Options} from "./Options.ts";
+import type {Options} from "./Options.ts";
 import Route from "./Route.ts";
 
 export default class Server {

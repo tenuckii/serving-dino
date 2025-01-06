@@ -1,6 +1,6 @@
-import {Endpoint} from "./Endpoint.ts";
-import { Methods } from "./Methods.ts";
-import {Options} from "./Options.ts";
+import type {Endpoint} from "./Endpoint.ts";
+import type { Methods } from "./Methods.ts";
+import type {Options} from "./Options.ts";
 /**
  * A class to represent all available routes
  */
