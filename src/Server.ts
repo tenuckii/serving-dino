@@ -103,7 +103,7 @@ export default class Server {
 	}
 }
 
-interface ServeTcpOptions extends Deno.ServeOptions<Deno.NetAddr> {
+interface ServeTcpOptions extends Deno.ServeOptions {
 	/** The transport to use. */
 	transport?: "tcp";
 
