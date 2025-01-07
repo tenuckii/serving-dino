@@ -1,4 +1,4 @@
-import { assert, assertEquals, assertFalse } from "@std/assert";
+import { assert, assertEquals} from "@std/assert";
 import { Server } from "../mod.ts";
 
 
