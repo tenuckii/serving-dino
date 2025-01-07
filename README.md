@@ -1,34 +1,51 @@
 # @tenucki/routing-dino
 
-[![JSR](https://jsr.io/@tenucki/routing-dino)](https://jsr.io/@tenucki/routing-dino)
+[![JSR](https://jsr.io/@tenucki/serving-dino)](https://jsr.io/@tenucki/serving-dino)
 
 ## Description
 
-@tenucki/routing-dino facilitates the routing of incomming requests
+@tenucki/routing-dino facilitates the initialization of a tcp server
 
 ## Permissions
 
-@tenucki/routing-dino does not require any additional permissions.
+@tenucki/routing-dino does require one permissions.
+
+--allow-net
 
 ## Installation
 
 ```bash
-deno add jsr:@tenucki/routing-dino
+deno add jsr:@tenucki/serving-dino
 ```
 
 ### Usage and Examples
 
 ```ts
 // in ./main.ts
-import Route, { Methods } from "@tenucki/routing-dino";
+import {Server} from "jsr:@tenucki/serving-dino";
+//or
+import {Server} from "@tenucki/serving-dino";
 
-const route: Route = Route.route();
+const server = Server.start() ;
 
-const server = Deno.serve(route.handler.bind(route));
+server.get("/",async () => {
+    return await Responses.html("./html/index.html")
+})
 
-route.path("/helloWorld", Methods.GET, () => {
-    return new Response("Hello World!");
-});
+import {Server, Responses} from "@tenucki/serving-dino";
+
+const server = Server.start() ;
+
+server.get("/",async () => {
+    return await Responses.html("./html/index.html")
+})
+
+//get body in request
+server.post("/helloWorld", async ({body}) => {
+    let b = await body;
+    console.log(b)
+    return Responses.ok();
+})
 ```
 
 ## License
