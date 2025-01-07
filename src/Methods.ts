@@ -1,3 +1,7 @@
+/**
+ * Enumaration of all the methods
+ */
+
 export enum Methods {
 	GET = "GET",
 	HEAD = "HEAD",

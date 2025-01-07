@@ -36,6 +36,7 @@ export default class Route {
 	/**
 	 * Gets the available format for the body
 	 * @param _req incomming http request.
+	 * @returns A promise of Json, string or nothing
 	 */
 	private async body(req: Request): Promise<JSON | string | undefined> {
 		const contentType = req.headers.get("content-type");
@@ -56,21 +57,28 @@ export default class Route {
 	 * @param strPath path
 	 * @param method method used by the request.
 	 * @param fn the function needed for the request.
+	 * @returns void
 	 */
 	public path(
 		strPath: string,
 		method: Methods,
 		fn: (option: Options) => Response | Promise<Response>,
-	) {
+	): void {
 		this.dict.set(strPath, { method, fn });
 	}
 
 	/**
 	 * Initializing of the singlethon
+	 *
+	 * @returns An instance of the class
 	 */
 	public static route(): Route {
 		return this._instance || (this._instance = new this());
 	}
+
+	/**
+	 * Initializing a base instance of the class
+	 */
 	private constructor() {
 		this.dict = new Map();
 	}
