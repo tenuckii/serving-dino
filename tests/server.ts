@@ -1,7 +1,7 @@
 import { assert, assertEquals } from "@std/assert";
 import { Server } from "../mod.ts";
 
-const server: Server = Server.start();
+const server: Server = Server.start({port:8000});
 
 Deno.test(function server_is_active() {
     assert(server.active());
