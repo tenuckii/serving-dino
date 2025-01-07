@@ -6,14 +6,6 @@ import { Methods } from "./src/Methods.ts";
 import type { Options } from "./src/Options.ts";
 import type { Endpoint } from "./src/Endpoint.ts";
 
-export type {
-    Options,
-    Endpoint,
-}
+export type { Endpoint, Options };
 
-export {
-    Route,
-    Methods,
-    Server,
-    Responses,
-}
+export { Methods, Responses, Route, Server };

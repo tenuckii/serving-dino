@@ -1,8 +1,6 @@
-
 import { Methods } from "../mod.ts";
 import { assertNotEquals } from "@std/assert/not-equals";
 import { assertEquals } from "@std/assert/equals";
-
 
 Deno.test(function equal_to_there_value() {
     assertEquals(Methods.GET, "GET");

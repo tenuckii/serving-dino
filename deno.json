@@ -1,28 +1,29 @@
 {
-  "name": "@tenucki/serving-dino",
-  "version": "0.0.1",
-  "license": "MIT",
-  "exports": "./mod.ts",
-  "publish": {
-    "include": [
-      "./*.ts",
-      "LICENSE",
-      "README.md",
-      "./src/*"
-    ],
-    "exclude": [
-      "tests/",
-      ".gitignore",
-      "./.github"
-    ]
-  },
-  "imports": {
-    "@std/assert": "jsr:@std/assert@1"
-  },
-  "test": {
-    "include": ["./tests/*"]
-  },
-  "tasks": {
-    "test": "deno test --allow-net"
-  }
+    "name": "@tenucki/serving-dino",
+    "version": "0.0.2",
+    "license": "MIT",
+    "exports": "./mod.ts",
+    "publish": {
+        "include": [
+            "./*.ts",
+            "LICENSE",
+            "README.md",
+            "./src/*"
+        ],
+        "exclude": [
+            "tests/",
+            ".gitignore",
+            "./.github"
+        ]
+    },
+    "imports": {
+        "@std/assert": "jsr:@std/assert@1"
+    },
+    "test": {
+        "include": ["./tests/*"]
+    },
+    "tasks": {
+        "test": "deno test --allow-net",
+        "fmt": "deno fmt --indent-width 4 --use-tabs true src/"
+    }
 }
