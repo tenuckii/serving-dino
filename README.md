@@ -28,13 +28,6 @@ import {Server} from "@tenucki/serving-dino";
 
 const server = Server.start() ;
 
-server.get("/",async () => {
-    return await Responses.html("./html/index.html")
-})
-
-import {Server, Responses} from "@tenucki/serving-dino";
-
-const server = Server.start() ;
 
 server.get("/",async () => {
     return await Responses.html("./html/index.html")
