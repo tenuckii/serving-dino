@@ -9,11 +9,11 @@ export default class Server {
 	private running: boolean;
 
 	public static start(
-		options?: Deno.ServeTcpOptions | Deno.ServeOptions,
+		options?: Deno.ServeOptions,
 	): Server {
 		return this._instance || (this._instance = new this(options));
 	}
-	constructor(options?: Deno.ServeTcpOptions | Deno.ServeOptions) {
+	constructor(options?: Deno.ServeOptions) {
 		this._route = Route.route();
 		this.running = true;
 		if (options === undefined) {
