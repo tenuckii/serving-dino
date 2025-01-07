@@ -5,14 +5,33 @@ import Route from "./Route.ts";
 export default class Server {
     private static _instance: Server;
     private _route: Route;
-
-
-    public static start(): Server {
-        return this._instance || (this._instance = new this);
+    private http_server: Deno.HttpServer<Deno.NetAddr>;
+    private running: boolean;
+    public static start(options?:Deno.ServeTcpOptions): Server {
+        return this._instance || (this._instance = new this(options));
     }
-    constructor() {
+    constructor(options?:Deno.ServeTcpOptions) {
         this._route = Route.route();
-        Deno.serve(this._route.handler.bind(this._route));
+        this.running = true;
+        if (options === undefined){
+            this.http_server = Deno.serve(this._route.handler.bind(this._route));
+        }
+        else{
+            this.http_server = Deno.serve(options, this._route.handler.bind(this._route));
+        }
+    }
+
+    public active():boolean{
+        return this.running;
+    }
+    
+    public info(): Deno.NetAddr{
+        return this.http_server.addr;
+    }
+
+    public shutdown(){
+        this.http_server.shutdown()
+        this.running = false;
     }
 
     public get(path: string, func: (option: Options) => Response): void {

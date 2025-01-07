@@ -6,6 +6,7 @@ const route: Route = Route.route();
 
 Deno.serve(route.handler.bind(route));
 
+
 Deno.test(async function noRoute() {
     const response = await fetch("http://localhost:8000/noRoute");
     assertEquals(response.status, 404, "This test if the route is in the hashmap");
