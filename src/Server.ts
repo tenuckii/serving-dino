@@ -8,10 +8,12 @@ export default class Server {
 	private http_server: Deno.HttpServer<Deno.NetAddr>;
 	private running: boolean;
 
-	public static start(options?: Deno.ServeTcpOptions): Server {
+	public static start(
+		options?: Deno.ServeTcpOptions | Deno.ServeOptions,
+	): Server {
 		return this._instance || (this._instance = new this(options));
 	}
-	constructor(options?: Deno.ServeTcpOptions) {
+	constructor(options?: Deno.ServeTcpOptions | Deno.ServeOptions) {
 		this._route = Route.route();
 		this.running = true;
 		if (options === undefined) {
